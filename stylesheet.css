@@ -1,0 +1,256 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+* h2{
+    color: white;
+    font-size: 22px;
+}
+
+* h1{
+    font-size: 26px;
+}
+
+* button{
+    width: 25px;
+    padding: 3px;
+    background-color: white;
+    border: 0.5px solid gray;
+}
+
+* button:hover{
+    background-color: rgb(48, 48, 139);
+}
+
+/* Universal Selectors end here */
+
+.container{
+    margin: 0 auto;
+    height: auto;
+    background-color: rgb(66, 115, 205);
+}
+
+.topBar{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    background-color: black;
+    padding: 1.5rem 2%;
+}
+
+
+.title{
+    margin: 0 auto;
+    /* border: 1px solid red; */
+}
+/* Header ends here */
+
+.helpDisplay{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    margin: 1.2rem auto;
+    max-width: 720px;
+    border: 0.5px solid gray;
+    background-color: white;
+    height: 540px;
+    border-radius: 18px;
+}
+
+.helpDisplay .topHalf{
+    display: flex;
+    margin: 20px auto;
+}
+
+.helpDisplay .topHalf .rightSide{
+    margin: 0 10%;
+}
+
+.helpDisplay .topHalf .rightSide .cancelBtn{
+    background-color: rgb(225, 78, 78);
+}
+
+.helpDisplay .topHalf .rightSide .cancelBtn:hover{
+    background-color: rgb(246, 9, 9);
+}
+
+.helpDisplay .instructionWrap{
+    margin: 10px  auto;
+}
+
+.helpDisplay .lowerHalf{
+    margin: 20px auto;
+}
+
+.helpDisplay .lowerHalf .secondRow{
+    margin: 20px auto;
+}
+
+.helpDisplay .lowerHalf input{
+    width: 50px;
+    height: 50px;
+    padding: 6%;
+    border: 0.5px solid gray;
+}
+
+.helpDisplay .lowerHalf p{
+    margin: 10px auto;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.helpDisplay .lowerHalf p span{
+    font-size: 16px;
+    font-weight: 500;
+}
+/* Instruction form runs from line 51 to 109 */
+
+.lowerWrapper{
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    margin: 1rem auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.lowerWrapper .displayScreen{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    margin: 1rem auto;
+    max-width: 600px;
+    padding: 10px;
+}
+
+.lowerWrapper .displayScreen input{
+    width: 50px;
+    height: 50px;
+    border: 0.5px solid gray;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.lowerWrapper .displayScreen .firstInputRow{
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.lowerWrapper .displayScreen .secondInputRow{
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.lowerWrapper .displayScreen .thirdInputRow{
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.lowerWrapper .displayScreen .fourthInputRow{
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.lowerWrapper .displayScreen .fifthInputRow{
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.lowerWrapper .displayScreen .sixthInputRow{
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Lower wrapper class keyboard begins here */
+.lowerWrapper .keyboard{
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+}
+/* Lower wrapper containing inner elements */
+
+.lowerWrapper .keyboard .firstBtnRow{
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.lowerWrapper .keyboard .firstBtnRow .normalBtn{
+    width: 40px;
+    height: 50px;
+    border-radius: 8px;
+    background-color: rgb(175, 178, 180);
+    margin-left: 10px;
+}
+
+.lowerWrapper .keyboard .firstBtnRow .normalBtn:hover{
+    background-color: white;
+}
+/* Lower wrapper .keyboard first child from line 132 to 148 */
+
+.lowerWrapper .keyboard .secondBtnRow{
+    margin: 10px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.lowerWrapper .keyboard .secondBtnRow .normalBtnTwo{
+    width: 40px;
+    height: 50px;
+    border-radius: 8px;
+    background-color: rgb(175, 178, 180);
+    margin-left: 10px;
+}
+
+.lowerWrapper .keyboard .secondBtnRow .normalBtnTwo:hover{
+    background-color: white;
+}
+/* Lower wrapper .keyboard second child from line 151 to 167 */
+
+.lowerWrapper .keyboard .thirdBtnRow{
+    margin: 7px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.lowerWrapper .keyboard .thirdBtnRow .specialBtn{
+    width: 70px;
+    border-radius: 8px;
+    background-color: rgb(49, 51, 49);
+}
+
+.lowerWrapper .keyboard .thirdBtnRow .specialBtn:hover{
+    background-color: rgb(25, 122, 36);
+}
+
+.lowerWrapper .keyboard .thirdBtnRow .normalBtn{
+    width: 40px;
+    height: 50px;
+    border-radius: 8px;
+    background-color: rgb(175, 178, 180);
+    margin-left: 10px;
+}
+
+.lowerWrapper .keyboard .thirdBtnRow .normalBtn:hover{
+    background-color: white;
+}
+
+.lowerWrapper .keyboard .thirdBtnRow #keyboardCancelBtn{
+    margin-left: 10px;
+}
+
+.lowerWrapper .keyboard .thirdBtnRow #keyboardCancelBtn:hover{
+    background-color: rgb(228, 11, 11);
+}
+/* Lower wrapper .keyboard third child runs from line 170 to 204*/

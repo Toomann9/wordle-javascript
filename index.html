@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./stylesheet.css">
+    <link rel="stylesheet" href="./fontawesome-free-6.2.0-web/css/all.min.css">
+    <title>Wordle Game</title>
+</head>
+<body>
+    <div class="container">
+
+        <div class="topBar">
+            <div class="menuItem">
+                <button type="menu" id="menuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <div class="title">
+                <h2>Wordle</h2>
+            </div>
+
+            <div class="helpWrap">
+                <button type="button" id="helpBtn" onclick="showForm();">
+                    <i class="fa-sharp fa-solid fa-question"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="lowerWrapper">
+
+            <form class="helpDisplay" id="helpForm" style="display: none;">
+
+                <div class="topHalf">
+
+                    <div class="leftSide">
+                        <h1>How To Play</h1>
+                        <p>Guess the Wordle in 6 tries.</p>
+                    </div>
+                    <div class="rightSide">
+                        <button type="button" id="cancelBtn" class="cancelBtn" onclick="hideForm();">
+                            <i class="fa-sharp fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <ul class="instructionWrap">
+
+                    <li style="padding: 5px 12px;">
+                        <p>
+                            Each guess must be a valid 5-letter word.
+                        </p>
+                    </li>
+
+                    <li style="padding: 5px 12px;">
+                        <p>
+                            The color of the tiles will change to
+                             show <br>how close your guess was to the word.
+                        </p>
+                    </li>
+                </ul>
+
+                <div class="lowerHalf">
+
+                    <div class="firstRow">
+                        <strong>Examples</strong>
+                        <div class="exampleOne" style="display: flex;">
+                            <input type="text" placeholder="W" style="background-color: rgb(71, 234, 71);">
+                            <input type="text" placeholder="E">
+                            <input type="text" placeholder="A">
+                            <input type="text" placeholder="R">
+                            <input type="text" placeholder="Y">
+                        </div>
+                        <p>W 
+                            <span>is in the word and in the correct spot.</span>
+                        </p>
+                    </div>
+
+                    <div class="secondRow">
+                        <div class="exampleTwo" style="display: flex;">
+                            <input type="text" placeholder="P">
+                            <input type="text" placeholder="I" style="background-color: rgb(215, 234, 71);">
+                            <input type="text" placeholder="L">
+                            <input type="text" placeholder="L">
+                            <input type="text" placeholder="S">
+                        </div>
+                        <p>I 
+                            <span>is in the word but in the wrong spot.</span>
+                        </p>
+                    </div>
+
+                    <div class="thirdRow">
+                        <div class="exampleThree" style="display: flex;">
+                            <input type="text" placeholder="V">
+                            <input type="text" placeholder="A">
+                            <input type="text" placeholder="G">
+                            <input type="text" placeholder="U" style="background-color: rgb(81, 86, 81);">
+                            <input type="text" placeholder="E">
+                        </div>
+                        <p>U 
+                            <span>is not in the word in any spot.</span>
+                        </p>
+                    </div>
+                </div>
+            </form>
+
+            <div class="displayScreen" id="displayInput">
+
+                <div class="firstInputRow" id="firstInputRow">
+                    <input type="text">
+                    <input type="text">
+                    <input type="text">
+                    <input type="text">
+                    <input type="text">
+                </div>
+
+                <div class="secondInputRow" id="secondInputRow">
+                    <input type="text">
+                    <input type="text">
+                    <input type="text">
+                    <input type="text">
+                    <input type="text">
+                </div>
+
+                <div class="thirdInputRow" id="thirdInputRow">
+                    <input type="text">
+                    <input type="text">
+                    <input type="text">
+                    <input type="text">
+                    <input type="text">
+                </div>
+
+                <div class="fourthInputRow" id="fourthInputRow">
+                    <input type="text">
+                    <input type="text">
+                    <input type="text">
+                    <input type="text">
+                    <input type="text">
+                </div>
+
+                <div class="fifthInputRow" id="fifthInputRow">
+                    <input type="text">
+                    <input type="text">
+                    <input type="text">
+                    <input type="text">
+                    <input type="text">
+                </div>
+
+                <div class="sixthInputRow" id="sixthInputRow">
+                    <input type="text">
+                    <input type="text">
+                    <input type="text">
+                    <input type="text">
+                    <input type="text">
+                </div>
+
+            </div>
+            
+            <div class="keyboard" id="keyboardBtns">
+
+                <div class="firstBtnRow" id="firstBtnRow">
+
+                    <button class="normalBtn" type="button" value="A">
+                        <p>A</p>
+                    </button>
+
+                    <button class="normalBtn" type="button" value="S">
+                        <p>S</p>
+                    </button>
+
+                    <button class="normalBtn" type="button" value="D">
+                        <p>D</p>
+                    </button>
+
+                    <button class="normalBtn" type="button" value="F">
+                        <p>F</p>
+                    </button>
+
+                    <button class="normalBtn" type="button" value="J">
+                        <p>J</p>
+                    </button>
+
+                    <button class="normalBtn" type="button" value="K">
+                        <p>K</p>
+                    </button>
+
+                    <button class="normalBtn" type="button" value="L">
+                        <p>L</p>
+                    </button>
+
+                    <button class="normalBtn" type="button" value="M">
+                        <p>M</p>
+                    </button>
+
+                    <button class="normalBtn" type="button" value="N">
+                        <p>N</p>
+                    </button>
+
+                    <button class="normalBtn" type="button" value="O">
+                        <p>O</p>
+                    </button>
+
+                </div>
+
+                <div class="secondBtnRow" id="secondBtnRow">
+
+                    <button class="normalBtnTwo" type="button" value="Q">
+                        <p>Q</p>
+                    </button>
+
+                    <button class="normalBtnTwo" type="button" value="P">
+                        <p>P</p>
+                    </button>
+
+                    <button class="normalBtnTwo" type="button" value="W">
+                        <p>W</p>
+                    </button>
+
+                    <button class="normalBtnTwo" type="button" value="E">
+                        <p>E</p>
+                    </button>
+
+                    <button class="normalBtnTwo" type="button" value="R">
+                        <p>R</p>
+                    </button>
+
+                    <button class="normalBtnTwo" type="button" value="T">
+                        <p>T</p>
+                    </button>
+
+                    <button class="normalBtnTwo" type="button" value="Y">
+                        <p>Y</p>
+                    </button>
+
+                    <button class="normalBtnTwo" type="button" value="U">
+                        <p>U</p>
+                    </button>
+
+                    <button class="normalBtnTwo" type="button" value="I">
+                        <p>I</p>
+                    </button>
+
+                </div>
+
+                <div class="thirdBtnRow" id="thirdBtnRow">
+
+                    <button type="submit" class="specialBtn" id="enterBtn">
+                        <p>Enter</p>
+                    </button>
+
+                    <button class="normalBtn" type="button" value="G">
+                        <p>G</p>
+                    </button>
+
+                    <button class="normalBtn" type="button" value="H">
+                        <p>H</p>
+                    </button>
+
+                    <button class="normalBtn" type="button" value="Z">
+                        <p>Z</p>
+                    </button>
+
+                    <button class="normalBtn" type="button" value="X">
+                        <p>X</p>
+                    </button>
+
+                    <button class="normalBtn" type="button" value="C">
+                        <p>C</p>
+                    </button>
+
+                    <button class="normalBtn" type="button" value="V">
+                        <p>V</p>
+                    </button>
+
+                    <button class="normalBtn" type="button" value="B">
+                        <p>B</p>
+                    </button>
+
+                    <button class="specialBtn" type="button" id="keyboardCancelBtn">
+                        <i class="fa-solid fa-regular fa-square-xmark"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
