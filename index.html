@@ -9,6 +9,7 @@
     <title>Wordle Game</title>
 </head>
 <body>
+    
     <div class="container">
 
         <div class="topBar">
@@ -16,12 +17,13 @@
                 <button type="menu" id="menuBtn">
                     <i class="fa-solid fa-bars"></i>
                 </button>
+                <div id="guessesLeft">-</div>
             </div>
-
+    
             <div class="title">
                 <h2>Wordle</h2>
             </div>
-
+    
             <div class="helpWrap">
                 <button type="button" id="helpBtn" onclick="showForm();">
                     <i class="fa-sharp fa-solid fa-question"></i>
@@ -29,12 +31,16 @@
             </div>
         </div>
 
+        <div class="playWrapper">
+            <button type="reset" class="restartBtn" >Restart</button>
+        </div>
+
         <div class="lowerWrapper">
 
             <form class="helpDisplay" id="helpForm" style="display: none;">
 
                 <div class="topHalf">
-
+            
                     <div class="leftSide">
                         <h1>How To Play</h1>
                         <p>Guess the Wordle in 6 tries.</p>
@@ -45,15 +51,15 @@
                         </button>
                     </div>
                 </div>
-
+            
                 <ul class="instructionWrap">
-
+            
                     <li style="padding: 5px 12px;">
                         <p>
                             Each guess must be a valid 5-letter word.
                         </p>
                     </li>
-
+            
                     <li style="padding: 5px 12px;">
                         <p>
                             The color of the tiles will change to
@@ -61,43 +67,43 @@
                         </p>
                     </li>
                 </ul>
-
+            
                 <div class="lowerHalf">
-
+            
                     <div class="firstRow">
                         <strong>Examples</strong>
                         <div class="exampleOne" style="display: flex;">
-                            <input type="text" placeholder="W" style="background-color: rgb(71, 234, 71);">
-                            <input type="text" placeholder="E">
-                            <input type="text" placeholder="A">
-                            <input type="text" placeholder="R">
-                            <input type="text" placeholder="Y">
+                            <input type="text" value="W" disabled style="background-color: rgb(71, 234, 71);">
+                            <input type="text" value="E" disabled>
+                            <input type="text" value="A" disabled>
+                            <input type="text" value="R" disabled>
+                            <input type="text" value="Y" disabled>
                         </div>
                         <p>W 
                             <span>is in the word and in the correct spot.</span>
                         </p>
                     </div>
-
+            
                     <div class="secondRow">
                         <div class="exampleTwo" style="display: flex;">
-                            <input type="text" placeholder="P">
-                            <input type="text" placeholder="I" style="background-color: rgb(215, 234, 71);">
-                            <input type="text" placeholder="L">
-                            <input type="text" placeholder="L">
-                            <input type="text" placeholder="S">
+                            <input type="text" value="P" disabled>
+                            <input type="text" value="I" disabled style="background-color: rgb(215, 234, 71);">
+                            <input type="text" value="L" disabled>
+                            <input type="text" value="L" disabled>
+                            <input type="text" value="S" disabled>
                         </div>
                         <p>I 
                             <span>is in the word but in the wrong spot.</span>
                         </p>
                     </div>
-
+            
                     <div class="thirdRow">
                         <div class="exampleThree" style="display: flex;">
-                            <input type="text" placeholder="V">
-                            <input type="text" placeholder="A">
-                            <input type="text" placeholder="G">
-                            <input type="text" placeholder="U" style="background-color: rgb(81, 86, 81);">
-                            <input type="text" placeholder="E">
+                            <input type="text" value="V" disabled>
+                            <input type="text" value="A" disabled>
+                            <input type="text" value="G" disabled>
+                            <input type="text" value="U" disabled style="background-color: rgb(81, 86, 81);">
+                            <input type="text" value="E" disabled>
                         </div>
                         <p>U 
                             <span>is not in the word in any spot.</span>
@@ -109,52 +115,52 @@
             <div class="displayScreen" id="displayInput">
 
                 <div class="firstInputRow" id="firstInputRow">
-                    <input type="text">
-                    <input type="text">
-                    <input type="text">
-                    <input type="text">
-                    <input type="text">
+                    <div class="input"></div>
+                    <div class="input"></div>
+                    <div class="input"></div>
+                    <div class="input"></div>
+                    <div class="input"></div>
                 </div>
 
                 <div class="secondInputRow" id="secondInputRow">
-                    <input type="text">
-                    <input type="text">
-                    <input type="text">
-                    <input type="text">
-                    <input type="text">
-                </div>
+                    <div class="input"></div>
+                    <div class="input"></div>
+                    <div class="input"></div>
+                    <div class="input"></div>
+                    <div class="input"></div>
+                 </div>
 
                 <div class="thirdInputRow" id="thirdInputRow">
-                    <input type="text">
-                    <input type="text">
-                    <input type="text">
-                    <input type="text">
-                    <input type="text">
-                </div>
+                    <div class="input"></div>
+                    <div class="input"></div>
+                    <div class="input"></div>
+                    <div class="input"></div>
+                    <div class="input"></div>
+                 </div>
 
                 <div class="fourthInputRow" id="fourthInputRow">
-                    <input type="text">
-                    <input type="text">
-                    <input type="text">
-                    <input type="text">
-                    <input type="text">
-                </div>
+                    <div class="input"></div>
+                    <div class="input"></div>
+                    <div class="input"></div>
+                    <div class="input"></div>
+                    <div class="input"></div>
+                 </div>
 
                 <div class="fifthInputRow" id="fifthInputRow">
-                    <input type="text">
-                    <input type="text">
-                    <input type="text">
-                    <input type="text">
-                    <input type="text">
-                </div>
+                    <div class="input"></div>
+                    <div class="input"></div>
+                    <div class="input"></div>
+                    <div class="input"></div>
+                    <div class="input"></div>
+                 </div>
 
                 <div class="sixthInputRow" id="sixthInputRow">
-                    <input type="text">
-                    <input type="text">
-                    <input type="text">
-                    <input type="text">
-                    <input type="text">
-                </div>
+                    <div class="input"></div>
+                    <div class="input"></div>
+                    <div class="input"></div>
+                    <div class="input"></div>
+                    <div class="input"></div>
+                 </div>
 
             </div>
             
@@ -163,43 +169,43 @@
                 <div class="firstBtnRow" id="firstBtnRow">
 
                     <button class="normalBtn" type="button" value="A">
-                        <p>A</p>
+                        A
                     </button>
 
                     <button class="normalBtn" type="button" value="S">
-                        <p>S</p>
+                        S
                     </button>
 
                     <button class="normalBtn" type="button" value="D">
-                        <p>D</p>
+                        D
                     </button>
 
                     <button class="normalBtn" type="button" value="F">
-                        <p>F</p>
+                        F
                     </button>
 
                     <button class="normalBtn" type="button" value="J">
-                        <p>J</p>
+                        J
                     </button>
 
                     <button class="normalBtn" type="button" value="K">
-                        <p>K</p>
+                        K
                     </button>
 
                     <button class="normalBtn" type="button" value="L">
-                        <p>L</p>
+                        L
                     </button>
 
                     <button class="normalBtn" type="button" value="M">
-                        <p>M</p>
+                        M
                     </button>
 
                     <button class="normalBtn" type="button" value="N">
-                        <p>N</p>
+                        N
                     </button>
 
                     <button class="normalBtn" type="button" value="O">
-                        <p>O</p>
+                        O
                     </button>
 
                 </div>
@@ -207,78 +213,78 @@
                 <div class="secondBtnRow" id="secondBtnRow">
 
                     <button class="normalBtnTwo" type="button" value="Q">
-                        <p>Q</p>
+                        Q
                     </button>
 
                     <button class="normalBtnTwo" type="button" value="P">
-                        <p>P</p>
+                        P
                     </button>
 
                     <button class="normalBtnTwo" type="button" value="W">
-                        <p>W</p>
+                        W
                     </button>
 
                     <button class="normalBtnTwo" type="button" value="E">
-                        <p>E</p>
+                        E
                     </button>
 
                     <button class="normalBtnTwo" type="button" value="R">
-                        <p>R</p>
+                        R
                     </button>
 
                     <button class="normalBtnTwo" type="button" value="T">
-                        <p>T</p>
+                        T
                     </button>
 
                     <button class="normalBtnTwo" type="button" value="Y">
-                        <p>Y</p>
+                        Y
                     </button>
 
                     <button class="normalBtnTwo" type="button" value="U">
-                        <p>U</p>
+                        U
                     </button>
 
                     <button class="normalBtnTwo" type="button" value="I">
-                        <p>I</p>
+                        I
                     </button>
 
                 </div>
 
                 <div class="thirdBtnRow" id="thirdBtnRow">
 
-                    <button type="submit" class="specialBtn" id="enterBtn">
-                        <p>Enter</p>
+                    <button type="submit" class="specialBtn" id="enterBtn" onclick="enterValue();">
+                        Enter
                     </button>
 
                     <button class="normalBtn" type="button" value="G">
-                        <p>G</p>
+                        G
                     </button>
 
                     <button class="normalBtn" type="button" value="H">
-                        <p>H</p>
+                        H
                     </button>
 
                     <button class="normalBtn" type="button" value="Z">
-                        <p>Z</p>
+                        Z
                     </button>
 
                     <button class="normalBtn" type="button" value="X">
-                        <p>X</p>
+                        X
                     </button>
 
                     <button class="normalBtn" type="button" value="C">
-                        <p>C</p>
+                        C
                     </button>
 
                     <button class="normalBtn" type="button" value="V">
-                        <p>V</p>
+                        V
                     </button>
 
                     <button class="normalBtn" type="button" value="B">
-                        <p>B</p>
+                        B
                     </button>
 
-                    <button class="specialBtn" type="button" id="keyboardCancelBtn">
+                    <button class="specialBtn" type="button" id="keyboardCancelBtn" onclick="deleteValue();">
                         <i class="fa-solid fa-regular fa-square-xmark"></i>
                     </button>
                 </div>
