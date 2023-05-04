@@ -47,16 +47,9 @@ function deleteValue() {
 
 
 let words = ['APPLE', 'EXACT', 'JUICE', 'LEVEL', 'PETER', 'GRAPE', 'LEMON', 'MANGO'];
-let randomIndex;
-// Generate a random index between 0 and the length of the array
-for (let i = 0; i < words.length; i++) {
-  randomIndex = Math.floor(Math.random() * words.length); 
-}
-// const restartBtn = document.getElementById("restartBtn");
+let randomIndex= words[Math.floor(Math.random() * words.length)]; 
 
-// restartBtn.addEventListener('click', () => {
-//   location.reload();
-// });
+console.log(Math.floor(Math.random() * words.length), randomIndex)
 
 
 // Function to display the clicked button value in the input field
@@ -103,6 +96,7 @@ function checkWin(wordsArr, randomIndex){
 }
 
 function enterValue(){
+  
   guessesLeft--;
   
   if (wordsArr === randomIndex && guessesLeft > 0){
@@ -115,16 +109,18 @@ function enterValue(){
 // Add event listener for restart button click
 const restartBtn = document.querySelector('.restartBtn');
 restartBtn.addEventListener("click", function() {
-  guessesLeft = 6;
-  const inputFields = displayScreen.querySelectorAll(".input");
-  inputFields.forEach(function(input) {
-    input.textContent = "";
-    input.style.backgroundColor = "white";
-  });
-  const guessesLeftDisplay = document.getElementById("guessesLeft");
-  guessesLeftDisplay.textContent = `Guesses left: ${guessesLeft}`;
-  const gameResult = document.getElementById("gameResult");
-  gameResult.textContent = "";
-  keyboardBtns.style.display = "block";
-  restartBtn.style.display = "none";
+  window.location.reload()
+  // console.log(guessesLeft)
+  // guessesLeft = 6;
+  // const inputFields = displayScreen.querySelectorAll(".input");
+  // inputFields.forEach(function(input) {
+  //   input.textContent = "";
+  //   input.style.backgroundColor = "white";
+  // });
+  // const guessesLeftDisplay = document.getElementById("guessesLeft");
+  // guessesLeftDisplay.textContent = `Guesses left: ${guessesLeft}`;
+  // const gameResult = document.getElementById("gameResult");
+  // gameResult.textContent = "";
+  // keyboardBtns.style.display = "block";
+  // restartBtn.style.display = "none";
 });
