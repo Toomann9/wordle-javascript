@@ -76,20 +76,21 @@ document.querySelectorAll('.normalBtn, .normalBtnTwo').forEach(btn => {
 
 
 function checkValue (){
+  guessesLeft--
   for (let i = 0; i < wordsArr.length; i++){
     for (let j = 0; j < randomIndex.length; j++){
       if (wordsArr[i] === randomIndex[j]){
-        this.style.backgroundColor="green";
+        inputs[i].style.backgroundColor="green";
       } else if (randomIndex.includes(wordsArr[i])){
-        this.style.backgroundColor="yellow";
+        inputs[i].style.backgroundColor="yellow";
       } else {
-        this.style.backgroundColor="gray";
+        inputs[i].style.backgroundColor="gray";
       }
     }
   }
 }
 
-function checkWin(wordsArr, randomIndex){
+function checkWin(){
   if (wordsArr === randomIndex){
     alert("Congratulations, You Won!!!");
   }
@@ -97,7 +98,7 @@ function checkWin(wordsArr, randomIndex){
 
 function enterValue(){
   
-  guessesLeft--;
+  // guessesLeft--;
   
   if (wordsArr === randomIndex && guessesLeft > 0){
     checkWin();
@@ -110,17 +111,25 @@ function enterValue(){
 const restartBtn = document.querySelector('.restartBtn');
 restartBtn.addEventListener("click", function() {
   window.location.reload()
-  // console.log(guessesLeft)
-  // guessesLeft = 6;
-  // const inputFields = displayScreen.querySelectorAll(".input");
-  // inputFields.forEach(function(input) {
-  //   input.textContent = "";
-  //   input.style.backgroundColor = "white";
-  // });
-  // const guessesLeftDisplay = document.getElementById("guessesLeft");
-  // guessesLeftDisplay.textContent = `Guesses left: ${guessesLeft}`;
-  // const gameResult = document.getElementById("gameResult");
-  // gameResult.textContent = "";
-  // keyboardBtns.style.display = "block";
-  // restartBtn.style.display = "none";
+  onLoader();
+  
 });
+
+// Get the loader element
+const loader = document.getElementById('loader');
+
+// Add event listener to button or link
+document.querySelector('.restartBtn').addEventListener('click', function() {
+  // Show the loader element
+  
+});
+
+let loaderDiv = document.getElementsByClassName("loader");
+
+function onLoader() {
+  loaderDiv.style.display = "block";
+}
+
+function offLoader() {
+  loaderDiv.style.display = "none";
+}

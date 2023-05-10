@@ -1,64 +1,69 @@
 *{
     box-sizing: border-box;
-    padding: 0;
     margin: 0;
     font-family: sans-serif;
 }
 
-* h2{
-    color: white;
-    font-size: 22px;
-}
-
-* h1{
-    font-size: 26px;
-}
-
-* button{
-    width: 25px;
-    padding: 3px;
-    background-color: white;
-    border: 0.5px solid gray;
-}
-
-* button:hover{
-    background-color: rgb(48, 48, 139);
+body {
+    margin: 0;
+    padding: 0;
 }
 
 /* Universal Selectors end here */
-body{
-    /* background-color: rgb(0, 0, 0); */
+.container {
+    max-width: 1200px;
     margin: 0 auto;
-    min-width: 90px;
-}
-.container{
-    margin: 0 auto;
-    height: auto;
-    background-color: rgb(66, 115, 205);
-    padding: 0 1.5%;
+    padding: 10px;
+    background-color: rgb(166, 167, 169);
+    display: flex;
+    flex-direction: column;
 }
 
-.topBar{
+.topBar {
     display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    background-color: rgb(0, 0, 0);
-    padding: 1.2rem 2%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(9, 1, 81);
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
 }
+
 
 .menuItem{
     display: flex;
+    font-size: 1rem;
 }
 
-#guessesLeft{
-    color: white;
+.menuItem button {
+    border: none;
     margin: 0 auto;
-    padding: 4px 15px;
+    padding: 3px 10px;
+    font-size: 1.2rem;
+    margin-right: 10px;
 }
 
-.title{
-    margin: 0 auto;
-    text-align: center;
+.menuItem button:hover{
+    background-color: rgb(166, 166, 170);
+}
+
+#guessesLeft {
+    font-size: 2rem;
+}
+
+.title h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.helpWrap button {
+    border: none;
+    padding: 4px 10px;
+    font-size: 1.2rem;
+}
+
+.helpWrap button:hover{
+    background-color: rgb(166, 166, 170);
 }
 /* Header ends here */
 
@@ -123,178 +128,222 @@ body{
 }
 /* Instruction form runs from line 51 to 109 */
 
-.playWrapper{
-    width: auto;
-    margin: 0.6rem auto;
-    /* border: 1px solid red; */
-}
-
-.playWrapper .restartBtn{
-    width: 14%;
-    /* padding: 0.5rem 3%; */
-    padding: 6px 5px;
-    margin: 0 auto;
-    border: none;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    font-size: 12px;
-}
-
-.playWrapper .restartBtn:hover{
-    background-color: rgb(26, 217, 86);
-    width: 12%;
-    height: 40px;
-    border: 0.75px solid yellow;
-    font-size: 15px;
-}
-
-.lowerWrapper{
+.playWrapper {
     display: flex;
-    flex-direction: column;
-    /* border: 1px solid red; */
-    margin: 0.3rem auto;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.restartBtn {
+    background-color: #0f1f30;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+.restartBtn:hover {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+.lowerWrapper {
+    display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
 }
 
-.lowerWrapper .displayScreen{
-    /* border: 1px solid red; */
+.displayScreen {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    margin: 0.3rem auto;
-    max-width: 600px;
-    padding: 10px;
-    height: 385px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: auto;
+    background-color: #E6E6E6;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px auto;
+    gap: 0.3rem;
 }
 
-.lowerWrapper .displayScreen .input{
+.firstInputRow{
+    display: flex;
+    margin: 0 auto;
+}
+  
+.secondInputRow{
+    display: flex;
+    margin: 0 auto;
+}
+
+.thirdInputRow{
+    display: flex;
+    margin: 0 auto;
+}
+
+.fourthInputRow{
+    display: flex;
+    margin: 0 auto;
+}
+
+.fifthInputRow{
+    display: flex;
+    margin: 0 auto;
+}
+
+.sixthInputRow{
+    display: flex;
+    margin: 0 auto;
+}
+
+.input {
     width: 50px;
     height: 50px;
-    border: 0.5px solid gray;
-    margin-left: 10px;
-    margin-top: 10px;
-    background-color: white;
-    font-weight: 600;
-    font-size: 18px;
-    padding: 14px 16px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    margin: 6px auto;
+    text-align: center;
+    font-size: 2rem;
+    min-width: 30px;
+    min-height: 30px;
 }
 
-.lowerWrapper .displayScreen .firstInputRow{
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.lowerWrapper .displayScreen .secondInputRow{
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.lowerWrapper .displayScreen .thirdInputRow{
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.lowerWrapper .displayScreen .fourthInputRow{
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.lowerWrapper .displayScreen .fifthInputRow{
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.lowerWrapper .displayScreen .sixthInputRow{
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-}
 
 /* Lower wrapper class keyboard begins here */
-.lowerWrapper .keyboard{
-    margin: 0.3rem auto;
+.keyboard {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    /* flex-wrap: wrap; */
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: transparent;
+    margin: 1.2rem auto;
 }
+
 /* Lower wrapper containing inner elements */
 
-.lowerWrapper .keyboard .firstBtnRow{
-    margin: 0 auto;
+.firstBtnRow {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
 }
 
-.lowerWrapper .keyboard .firstBtnRow .normalBtn{
-    width: 40px;
-    height: 50px;
-    border-radius: 8px;
-    background-color: rgb(175, 178, 180);
-    margin-left: 10px;
-}
-
-.lowerWrapper .keyboard .firstBtnRow .normalBtn:hover{
-    background-color: white;
-}
-/* Lower wrapper .keyboard first child from line 132 to 148 */
-
-.lowerWrapper .keyboard .secondBtnRow{
-    margin: 10px auto;
+.secondBtnRow{
     display: flex;
+    /* margin-left: 40px; */
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
 }
 
-.lowerWrapper .keyboard .secondBtnRow .normalBtnTwo{
-    width: 40px;
-    height: 50px;
-    border-radius: 8px;
-    background-color: rgb(175, 178, 180);
-    margin-left: 10px;
+.thirdBtnRow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-.lowerWrapper .keyboard .secondBtnRow .normalBtnTwo:hover{
+.normalBtn, .normalBtnTwo {
+    width: 50px;
+    height: 50px;
+    background-color: #E6E6E6;
+    border: 2px solid #333;
+    border-radius: 30%;
+    margin: 10px;
+    font-size: 2rem;
+    color: #333;
+}
+
+
+.normalBtn, .normalBtnTwo:hover{
     background-color: white;
 }
+
+.hidden {
+    width: 100%;
+    display: none;
+    margin-top: 30px;
+}
+/* Lower wrapper from line 132 to 148 */
+
 /* Lower wrapper .keyboard second child from line 151 to 167 */
 
-.lowerWrapper .keyboard .thirdBtnRow{
-    margin: 7px auto;
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .lowerWrapper .keyboard .thirdBtnRow .specialBtn{
-    width: 70px;
+    padding: 3px 6px;
     border-radius: 8px;
-    background-color: rgb(49, 51, 49);
+    background-color: rgb(51, 67, 171);
+    border: 0.5px solid gray;
+    color: white;
 }
 
 .lowerWrapper .keyboard .thirdBtnRow .specialBtn:hover{
     background-color: rgb(25, 122, 36);
 }
 
-.lowerWrapper .keyboard .thirdBtnRow .normalBtn{
-    width: 40px;
-    height: 50px;
-    border-radius: 8px;
-    background-color: rgb(175, 178, 180);
-    margin-left: 10px;
-}
-
-.lowerWrapper .keyboard .thirdBtnRow .normalBtn:hover{
-    background-color: white;
-}
-
-.lowerWrapper .keyboard .thirdBtnRow #keyboardCancelBtn{
-    margin-left: 10px;
-}
-
 .lowerWrapper .keyboard .thirdBtnRow #keyboardCancelBtn:hover{
     background-color: rgb(228, 11, 11);
 }
+
 /* Lower wrapper .keyboard third child runs from line 170 to 204*/
+
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid rgb(177, 177, 177);
+    border-bottom: 16px solid rgb(177, 177, 177);
+    border-left: 16px solid #242424;
+    border-right: 16px solid #242424;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 15s linear infinite;
+    position: fixed;
+    top: 46%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    display: none;
+}
+   
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+
+  @media only screen and (max-width: 768px) {
+    /* Top bar styles */
+    .topBar {
+        flex-wrap: wrap;
+    }
+
+    .title h2 {
+        font-size: 2rem;
+    }
+
+    /* Play wrapper styles */
+    .playWrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Lower wrapper styles */
+
+    .hidden {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .firstBtnHide, .secondBtnHide, .thirdBtnHide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+}

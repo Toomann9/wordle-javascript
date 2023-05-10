@@ -37,80 +37,83 @@
 
         <div class="lowerWrapper">
 
-            <form class="helpDisplay" id="helpForm" style="display: none;">
+            
+<form class="helpDisplay" id="helpForm" style="display: none;">
 
-                <div class="topHalf">
-            
-                    <div class="leftSide">
-                        <h1>How To Play</h1>
-                        <p>Guess the Wordle in 6 tries.</p>
-                    </div>
-                    <div class="rightSide">
-                        <button type="button" id="cancelBtn" class="cancelBtn" onclick="hideForm();">
-                            <i class="fa-sharp fa-solid fa-xmark"></i>
-                        </button>
-                    </div>
-                </div>
-            
-                <ul class="instructionWrap">
-            
-                    <li style="padding: 5px 12px;">
-                        <p>
-                            Each guess must be a valid 5-letter word.
-                        </p>
-                    </li>
-            
-                    <li style="padding: 5px 12px;">
-                        <p>
-                            The color of the tiles will change to
-                             show <br>how close your guess was to the word.
-                        </p>
-                    </li>
-                </ul>
-            
-                <div class="lowerHalf">
-            
-                    <div class="firstRow">
-                        <strong>Examples</strong>
-                        <div class="exampleOne" style="display: flex;">
-                            <input type="text" value="W" disabled style="background-color: rgb(71, 234, 71);">
-                            <input type="text" value="E" disabled>
-                            <input type="text" value="A" disabled>
-                            <input type="text" value="R" disabled>
-                            <input type="text" value="Y" disabled>
-                        </div>
-                        <p>W 
-                            <span>is in the word and in the correct spot.</span>
-                        </p>
-                    </div>
-            
-                    <div class="secondRow">
-                        <div class="exampleTwo" style="display: flex;">
-                            <input type="text" value="P" disabled>
-                            <input type="text" value="I" disabled style="background-color: rgb(215, 234, 71);">
-                            <input type="text" value="L" disabled>
-                            <input type="text" value="L" disabled>
-                            <input type="text" value="S" disabled>
-                        </div>
-                        <p>I 
-                            <span>is in the word but in the wrong spot.</span>
-                        </p>
-                    </div>
-            
-                    <div class="thirdRow">
-                        <div class="exampleThree" style="display: flex;">
-                            <input type="text" value="V" disabled>
-                            <input type="text" value="A" disabled>
-                            <input type="text" value="G" disabled>
-                            <input type="text" value="U" disabled style="background-color: rgb(81, 86, 81);">
-                            <input type="text" value="E" disabled>
-                        </div>
-                        <p>U 
-                            <span>is not in the word in any spot.</span>
-                        </p>
-                    </div>
-                </div>
-            </form>
+    <div class="topHalf">
+
+        <div class="leftSide">
+            <h1>How To Play</h1>
+            <p>Guess the Wordle in 6 tries.</p>
+        </div>
+        <div class="rightSide">
+            <button type="button" id="cancelBtn" class="cancelBtn" onclick="hideForm();">
+                <i class="fa-sharp fa-solid fa-xmark"></i>
+            </button>
+        </div>
+    </div>
+
+    <ul class="instructionWrap">
+
+        <li style="padding: 5px 12px;">
+            <p>
+                Each guess must be a valid 5-letter word.
+            </p>
+        </li>
+
+        <li style="padding: 5px 12px;">
+            <p>
+                The color of the tiles will change to
+                 show <br>how close your guess was to the word.
+            </p>
+        </li>
+    </ul>
+
+    <div class="lowerHalf">
+
+        <div class="firstRow">
+            <strong>Examples</strong>
+            <div class="exampleOne" style="display: flex;">
+                <input type="text" value="W" disabled style="background-color: rgb(71, 234, 71);">
+                <input type="text" value="E" disabled>
+                <input type="text" value="A" disabled>
+                <input type="text" value="R" disabled>
+                <input type="text" value="Y" disabled>
+            </div>
+            <p>W 
+                <span>is in the word and in the correct spot.</span>
+            </p>
+        </div>
+
+        <div class="secondRow">
+            <div class="exampleTwo" style="display: flex;">
+                <input type="text" value="P" disabled>
+                <input type="text" value="I" disabled style="background-color: rgb(215, 234, 71);">
+                <input type="text" value="L" disabled>
+                <input type="text" value="L" disabled>
+                <input type="text" value="S" disabled>
+            </div>
+            <p>I 
+                <span>is in the word but in the wrong spot.</span>
+            </p>
+        </div>
+
+        <div class="thirdRow">
+            <div class="exampleThree" style="display: flex;">
+                <input type="text" value="V" disabled>
+                <input type="text" value="A" disabled>
+                <input type="text" value="G" disabled>
+                <input type="text" value="U" disabled style="background-color: rgb(81, 86, 81);">
+                <input type="text" value="E" disabled>
+            </div>
+            <p>U 
+                <span>is not in the word in any spot.</span>
+            </p>
+        </div>
+    </div>
+</form>
+
+
 
             <div class="displayScreen" id="displayInput">
 
@@ -163,6 +166,9 @@
                  </div>
 
             </div>
+
+            <!-- Loader -->
+            <div class="loader" id="overlay"></div>
             
             <div class="keyboard" id="keyboardBtns">
 
@@ -204,11 +210,122 @@
                         N
                     </button>
 
+
+                </div>
+
+            <div class="hidden" style="display: none;">
+                <div class="firstBtnHide" id="firstBtnRow">
+
+                    <button class="normalBtn" type="button" value="A">
+                        A
+                    </button>
+
+                    <button class="normalBtn" type="button" value="S">
+                        S
+                    </button>
+
+                    <button class="normalBtn" type="button" value="D">
+                        D
+                    </button>
+
+                    <button class="normalBtn" type="button" value="F">
+                        F
+                    </button>
+
+                    <button class="normalBtn" type="button" value="J">
+                        J
+                    </button>
+
+                </div>
+                <div class="secondBtnHide" id="secondBtnRow">
+
+                    <button class="normalBtn" type="button" value="K">
+                        K
+                    </button>
+
+                    <button class="normalBtn" type="button" value="L">
+                        L
+                    </button>
+
+                    <button class="normalBtn" type="button" value="M">
+                        M
+                    </button>
+
+                    <button class="normalBtn" type="button" value="N">
+                        N
+                    </button>
+
+                    <button class="normalBtnTwo" type="button" value="Q">
+                        Q
+                    </button>
+                </div>
+
+                <div class="thirdBtnHide" id="thirdBtnRow">
+                    <button class="normalBtnTwo" type="button" value="P">
+                        P
+                    </button>
+
+                    <button class="normalBtnTwo" type="button" value="W">
+                        W
+                    </button>
+
+                    <button class="normalBtnTwo" type="button" value="E">
+                        E
+                    </button>
+
+                    <button class="normalBtnTwo" type="button" value="R">
+                        R
+                    </button>
+
+                    <button class="normalBtnTwo" type="button" value="T">
+                        T
+                    </button>
+                </div>
+
+                <div class="fourthBtnHide" id="fourthBtnRow">
+                    <button class="normalBtnTwo" type="button" value="Y">
+                        Y
+                    </button>
+
+                    <button class="normalBtnTwo" type="button" value="U">
+                        U
+                    </button>
+
+                    <button class="normalBtnTwo" type="button" value="I">
+                        I
+                    </button>
+
                     <button class="normalBtn" type="button" value="O">
                         O
                     </button>
 
+                    <button class="normalBtn" type="button" value="G">
+                        G
+                    </button>
                 </div>
+
+                <div class="fifthBtnHide" id="fifthBtnRow">
+                    <button class="normalBtn" type="button" value="Z">
+                        Z
+                    </button>
+
+                    <button class="normalBtn" type="button" value="X">
+                        X
+                    </button>
+
+                    <button class="normalBtn" type="button" value="C">
+                        C
+                    </button>
+
+                    <button class="normalBtn" type="button" value="V">
+                        V
+                    </button>
+
+                    <button class="normalBtn" type="button" value="B">
+                        B
+                    </button>
+                </div>
+            </div>
 
                 <div class="secondBtnRow" id="secondBtnRow">
 
@@ -254,6 +371,10 @@
 
                     <button type="submit" class="specialBtn" id="enterBtn" onclick="enterValue();">
                         Enter
+                    </button>
+
+                    <button class="normalBtn" type="button" value="O">
+                        O
                     </button>
 
                     <button class="normalBtn" type="button" value="G">
